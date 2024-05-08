@@ -1,0 +1,241 @@
+﻿@{
+    ViewData["Title"] = "Slide Puzzle";
+    ViewData["ImageUrl"] = "../images/pochacco.jpg"; // Replace with your image path
+    ViewData["NumSquares"] = 4; // Set number of squares per row/column
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body, html {
+            padding-bottom: 70px;
+        }
+
+        #puzzle {
+            position: relative;
+            width: 400px; /* Adjust based on actual image size or preference */
+            height: 400px;
+            margin: 20px auto;
+            border: 1px solid #000;
+        }
+
+        .puzzle-piece {
+            position: absolute;
+            background-size: 400px 400px; /* Match the puzzle size to ensure correct sectioning */
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .empty {
+            background-image: none;
+            visibility: hidden;
+        }
+    </style>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div id="puzzle"></div>
+    <div class="modal fade" id="winModal" tabindex="-1" aria-labelledby="winModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="winModalLabel">Puzzle Solved!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="~/images/happy-pochacco.gif" alt="Congrats!" class="img-fluid">
+                    <h1 class="text-center"><strong>HIROE! that was so good!!!<br />I was testing this and it took me forever HAHAHA！<br />Perhaps you really are the best ever?!?</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 id="congratsText" class="text-center mt-3" style="display: none;">Isn't He so cute!!!<br />I love him 🥰</h3>
+    <button class="btn-custom btn-lg text-center" data-toggle="modal" data-target="#confirmationModal" style="text-decoration: none; display: none" id="nextButton">
+        This one was too easy for me, I'm ready for the hard one
+    </button>
+    <!-- Confirmation Modal -->
+    <div class="modal fade text-center" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Really?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmBtn">Yes, I'm sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const imageUrl = '@ViewData["ImageUrl"]';
+        const numSquares = @ViewData["NumSquares"];
+        let pieces = [];
+
+        window.onload = function () {
+            createPuzzle();
+        };
+        $(document).ready(function () {
+            $('#confirmBtn').click(function () {
+                // Perform the redirection
+                window.location.href = '@Url.Action("Game", "SlidePuzzle")'; // Make sure this Razor syntax is executed server-side correctly
+            });
+        });
+
+        function shuffle(pieces, numSquares) {
+            let isSolvable = false;
+            while (!isSolvable) {
+                // Randomly shuffle the array
+                for (let i = pieces.length - 2; i > 0; i--) { // Note: last piece is the empty piece and stays fixed
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [pieces[i], pieces[j]] = [pieces[j], pieces[i]];
+                }
+
+                isSolvable = checkSolvability(pieces, numSquares);
+            }
+        }
+
+        function checkSolvability(pieces, numSquares) {
+            let inversions = 0;
+            const pieceArray = pieces.map((p) => {
+                const backgroundPosition = p.style.backgroundPosition.match(/-(\d+)px/);
+                return backgroundPosition ? parseInt(backgroundPosition[1]) / (400 / numSquares) : -1; // Empty piece
+            });
+
+            for (let i = 0; i < pieceArray.length; i++) {
+                for (let j = i + 1; j < pieceArray.length; j++) {
+                    if (pieceArray[i] > pieceArray[j] && pieceArray[j] !== -1) {
+                        inversions++;
+                    }
+                }
+            }
+
+            // Calculate the row of the blank tile from the bottom
+            const blankRowFromBottom = Math.floor(pieces.findIndex(p => p.classList.contains('empty')) / numSquares);
+
+            if (numSquares % 2 !== 0) { // Odd grid
+                return inversions % 2 === 0;
+            } else { // Even grid
+                return ((inversions + blankRowFromBottom) % 2 === 0);
+            }
+        }
+
+        function createPuzzle() {
+            const puzzle = document.getElementById('puzzle');
+            const pieceSize = puzzle.offsetWidth / numSquares;
+
+            for (let i = 0; i < numSquares * numSquares; i++) {
+                let piece = document.createElement('div');
+                piece.className = 'puzzle-piece';
+                piece.style.width = `${pieceSize}px`;
+                piece.style.height = `${pieceSize}px`;
+                if (i < numSquares * numSquares - 1) {
+                    piece.style.backgroundImage = `url('${imageUrl}')`;
+                    piece.style.backgroundPosition = `-${(i % numSquares) * pieceSize}px -${Math.floor(i / numSquares) * pieceSize}px`;
+                } else {
+                    piece.classList.add('empty'); // Mark the last piece as empty
+                }
+                piece.setAttribute('data-original-x', i % numSquares);
+                piece.setAttribute('data-original-y', Math.floor(i / numSquares));
+                pieces.push(piece);
+            }
+
+            //shuffle(pieces); // Shuffle pieces before appending to ensure solvable configuration
+            pieces.forEach((piece, i) => {
+                piece.style.left = `${(i % numSquares) * pieceSize}px`;
+                piece.style.top = `${Math.floor(i / numSquares) * pieceSize}px`;
+                puzzle.appendChild(piece);
+                piece.addEventListener('click', function () {
+                    // Calculate the current index based on its position
+                    const currentX = Math.round(parseInt(piece.style.left, 10) / pieceSize);
+                    const currentY = Math.round(parseInt(piece.style.top, 10) / pieceSize);
+                    const currentIndex = currentY * numSquares + currentX;
+
+                    if (!piece.classList.contains('empty')) {
+                        movePiece(currentIndex, piece, pieceSize);
+                    }
+                });
+            });
+        }
+
+        function movePiece(index, piece, pieceSize) {
+
+            const emptyPiece = document.querySelector('.empty');
+            const emptyIdx = pieces.indexOf(emptyPiece);
+            const x = index % numSquares;
+            const y = Math.floor(index / numSquares);
+            const ex = emptyIdx % numSquares;
+            const ey = Math.floor(emptyIdx / numSquares);
+            console.log(`Attempting to move piece at index ${index} from (${x}, ${y}) to empty spot at (${ex}, ${ey})`);
+
+            // Check if the clicked piece is adjacent to the empty space
+            if ((Math.abs(ex - x) === 1 && ey === y) || (Math.abs(ey - y) === 1 && ex === x)) {
+                // Swap positions
+                [piece.style.left, emptyPiece.style.left] = [emptyPiece.style.left, piece.style.left];
+                [piece.style.top, emptyPiece.style.top] = [emptyPiece.style.top, piece.style.top];
+
+                // Update pieces array
+                [pieces[emptyIdx], pieces[index]] = [pieces[index], pieces[emptyIdx]];
+                checkWinCondition();
+
+            }
+        }
+
+        function checkWinCondition() {
+            const pieces = document.querySelectorAll('.puzzle-piece');
+            let solved = true;
+
+            for (let i = 0; i < pieces.length; i++) {
+                const piece = pieces[i];
+                const currentX = Math.round(parseInt(piece.style.left, 10) / (puzzle.offsetWidth / numSquares));
+                const currentY = Math.round(parseInt(piece.style.top, 10) / (puzzle.offsetHeight / numSquares));
+                const originalX = parseInt(piece.getAttribute('data-original-x'), 10);
+                const originalY = parseInt(piece.getAttribute('data-original-y'), 10);
+
+                // Check current position against the original position
+                if (currentX !== originalX || currentY !== originalY) {
+                    solved = false;
+                    break;
+                }
+            }
+
+            if (solved) {
+                const pieceSize = puzzle.offsetWidth / numSquares;
+                const emptyPiece = document.querySelector('.empty');
+                const i = (numSquares * numSquares - 1)
+                emptyPiece.style.backgroundImage = `url('${imageUrl}')`;
+                emptyPiece.style.backgroundPosition = `-${(i % numSquares) * pieceSize}px -${Math.floor(i / numSquares) * pieceSize}px`;
+                emptyPiece.classList.remove('empty'); // Mark the last piece as empty
+                console.log("Puzzle solved!");
+                document.querySelectorAll('.puzzle-piece').forEach(piece => {
+                    piece.style.border = 'none';
+                    piece.style.cursor = 'default';
+                });
+                $('#winModal').modal('show');  // Use jQuery to show the Bootstrap modal
+                document.getElementById('congratsText').style.display = 'block'; // Show the hidden h3 text
+                document.getElementById('nextButton').style.display = 'block'; // Show the next button
+
+
+            }
+        }
+    </script>
+</body>
+</html>

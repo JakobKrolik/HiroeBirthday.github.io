@@ -1,0 +1,136 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.light-blue {
+    background-color: mediumaquamarine
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Bubblegum Sans', sans-serif;
+}
+
+h1 {
+    color: #4A90E2;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.highlight {
+    color: #003ba4;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: white; /* White text for contrast */
+    text-decoration: none; /* Removes underline from all links */
+}
+
+a:link {
+    color: inherit; /* Keeps the text color the same as its container, removing the default blue */
+    text-decoration: none; /* Removes underline from all links */
+}
+
+/* Custom button styling */
+.btn-custom {
+    background-color: #4A90E2; /* Light blue background */
+    border-color: #357ABD; /* Matching border color for depth */
+    color: #333;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-weight: 800;
+    text-decoration: none; /* Removes underline from all links */
+}
+
+
+/* Hover effect for button */
+    .btn-custom:hover {
+        background-color: #357ABD; /* Slightly darker shade when hovered */
+        color: white; /* White text for contrast */
+    }
+
+.bottom-left-img {
+    position: absolute;
+    bottom: 70px;
+    left: 10px;
+    max-width: 150px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.text-box {
+    position: absolute;
+    bottom: 210px;
+    left: 140px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(173, 216, 230, 0.8)); /* Light blue to white gradient */
+    color: #073763; /* Dark blue color for text to ensure readability */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(173, 216, 230, 0.5), 0 0 10px rgba(173, 216, 230, 0.5); /* Soft blue glow */
+    animation: shine 1s ease-in-out infinite;
+    text-shadow: 1px 1px 1px #fff; /* Ensures text clarity */
+}
+
+@keyframes shine {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 8px rgba(173, 216, 230, 0.5), 0 0 10px rgba(173, 216, 230, 0.5);
+    }
+
+    50% {
+        opacity: 0.9;
+        box-shadow: 0 0 15px rgba(173, 216, 230, 0.7), 0 0 20px rgba(173, 216, 230, 0.7);
+    }
+}

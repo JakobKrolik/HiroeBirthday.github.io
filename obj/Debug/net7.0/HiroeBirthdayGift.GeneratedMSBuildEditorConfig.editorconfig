@@ -1,0 +1,57 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HiroeBirthdayGift
+build_property.RootNamespace = HiroeBirthdayGift
+build_property.ProjectDir = C:\Users\thres\source\repos\HiroeBirthdayGift\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\thres\source\repos\HiroeBirthdayGift
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/SlidePuzzle/Dog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcRG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/SlidePuzzle/Game.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcR2FtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/SlidePuzzle/Pochacco.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcUG9jaGFjY28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/source/repos/HiroeBirthdayGift/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8u0krb1k5a
