@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thres\\source\\repos\\HiroeBirthdayGift\\HiroeBirthdayGift.csproj",
+      "projectUniqueName": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\HiroeBirthdayGift.csproj",
       "projectName": "HiroeBirthdayGift",
-      "projectPath": "C:\\Users\\thres\\source\\repos\\HiroeBirthdayGift\\HiroeBirthdayGift.csproj",
+      "projectPath": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\HiroeBirthdayGift.csproj",
       "packagesPath": "C:\\Users\\thres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thres\\source\\repos\\HiroeBirthdayGift\\obj\\",
+      "outputPath": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thres\\AppData\\Roaming\\NuGet\\NuGet.Config",

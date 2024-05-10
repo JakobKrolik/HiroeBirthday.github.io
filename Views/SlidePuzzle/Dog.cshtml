@@ -61,7 +61,7 @@
         </div>
     </div>
     <h3 id="congratsText" class="text-center mt-3" style="display: none;">Hehe looks like a good position to be in<br />Makes me think of guavas 😗</h3>
-    <a class="btn-custom btn-lg text-center" href="@Url.Action("Pochacco", "Puzzle")" role="button" style="text-decoration: none; display: none" id="nextButton">I, Hiroe Wakai, am ready for the next puzzle!!</a>
+    <a class="btn-custom btn-lg text-center" href="@Url.Action("Pochacco", "SlidePuzzle")" role="button" style="text-decoration: none; display: none" id="nextButton">I, Hiroe Wakai, am ready for the next puzzle!!</a>
     <script>
         const imageUrl = '@ViewData["ImageUrl"]';
         const numSquares = @ViewData["NumSquares"];
@@ -86,21 +86,21 @@
 
         function checkSolvability(pieces, numSquares) {
             let inversions = 0;
-            const pieceArray = pieces.map((p) => {
-                const backgroundPosition = p.style.backgroundPosition.match(/-(\d+)px/);
-                return backgroundPosition ? parseInt(backgroundPosition[1]) / (400 / numSquares) : -1; // Empty piece
-            });
+            const pieceArray = pieces.map(p => parseInt(p.getAttribute('data-index'), 10));
 
             for (let i = 0; i < pieceArray.length; i++) {
+                if (pieces[i].classList.contains('empty')) continue; // Skip the empty piece in inversions count
                 for (let j = i + 1; j < pieceArray.length; j++) {
-                    if (pieceArray[i] > pieceArray[j] && pieceArray[j] !== -1) {
+                    if (pieces[j].classList.contains('empty')) continue; // Skip the empty piece in inversions count
+                    if (pieceArray[i] > pieceArray[j]) {
                         inversions++;
                     }
                 }
             }
 
-            // Calculate the row of the blank tile from the bottom
-            const blankRowFromBottom = Math.floor(pieces.findIndex(p => p.classList.contains('empty')) / numSquares);
+            // Adjust blankRowFromBottom calculation
+            const blankIndex = pieces.findIndex(p => p.classList.contains('empty'));
+            const blankRowFromBottom = numSquares - Math.floor(blankIndex / numSquares) - 1;
 
             if (numSquares % 2 !== 0) { // Odd grid
                 return inversions % 2 === 0;
@@ -126,6 +126,7 @@
                 }
                 piece.setAttribute('data-original-x', i % numSquares);
                 piece.setAttribute('data-original-y', Math.floor(i / numSquares));
+                piece.setAttribute('data-index', i);
                 pieces.push(piece);
             }
 

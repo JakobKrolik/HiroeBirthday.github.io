@@ -56,35 +56,14 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="~/images/happy-pochacco.gif" alt="Congrats!" class="img-fluid">
-                    <h1 class="text-center"><strong>HIROE! that was so good!!!<br />I was testing this and it took me forever HAHAHA！<br />Perhaps you really are the best ever?!?</strong></h1>
+                    <h1 class="text-center"><strong>Haha just kidding 😉<br />Could you guess what the picture was???</strong></h1>
                 </div>
             </div>
         </div>
     </div>
-    <h3 id="congratsText" class="text-center mt-3" style="display: none;">Isn't He so cute!!!<br />I love him 🥰</h3>
-    <button class="btn-custom btn-lg text-center" data-toggle="modal" data-target="#confirmationModal" style="text-decoration: none; display: none" id="nextButton">
-        This one was too easy for me, I'm ready for the hard one
-    </button>
-    <!-- Confirmation Modal -->
-    <div class="modal fade text-center" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmationModalLabel">Really?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Are you sure?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="confirmBtn">Yes, I'm sure</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h3 id="congratsText" class="text-center mt-3" style="display: none;">Hehe looks like a fun game<br />We should play it more</h3>
+    <a class="btn-custom btn-lg text-center" href="@Url.Action("Pochacco", "SlidePuzzle")" role="button" style="text-decoration: none; display: none" id="nextButton">I, Hiroe Wakai, am ready for the next puzzle!!</a>
+
     <script>
         const imageUrl = '@ViewData["ImageUrl"]';
         const numSquares = @ViewData["NumSquares"];
@@ -116,21 +95,21 @@
 
         function checkSolvability(pieces, numSquares) {
             let inversions = 0;
-            const pieceArray = pieces.map((p) => {
-                const backgroundPosition = p.style.backgroundPosition.match(/-(\d+)px/);
-                return backgroundPosition ? parseInt(backgroundPosition[1]) / (400 / numSquares) : -1; // Empty piece
-            });
+            const pieceArray = pieces.map(p => parseInt(p.getAttribute('data-index'), 10));
 
             for (let i = 0; i < pieceArray.length; i++) {
+                if (pieces[i].classList.contains('empty')) continue; // Skip the empty piece in inversions count
                 for (let j = i + 1; j < pieceArray.length; j++) {
-                    if (pieceArray[i] > pieceArray[j] && pieceArray[j] !== -1) {
+                    if (pieces[j].classList.contains('empty')) continue; // Skip the empty piece in inversions count
+                    if (pieceArray[i] > pieceArray[j]) {
                         inversions++;
                     }
                 }
             }
 
-            // Calculate the row of the blank tile from the bottom
-            const blankRowFromBottom = Math.floor(pieces.findIndex(p => p.classList.contains('empty')) / numSquares);
+            // Adjust blankRowFromBottom calculation
+            const blankIndex = pieces.findIndex(p => p.classList.contains('empty'));
+            const blankRowFromBottom = numSquares - Math.floor(blankIndex / numSquares) - 1;
 
             if (numSquares % 2 !== 0) { // Odd grid
                 return inversions % 2 === 0;
@@ -138,6 +117,7 @@
                 return ((inversions + blankRowFromBottom) % 2 === 0);
             }
         }
+
 
         function createPuzzle() {
             const puzzle = document.getElementById('puzzle');
@@ -156,6 +136,7 @@
                 }
                 piece.setAttribute('data-original-x', i % numSquares);
                 piece.setAttribute('data-original-y', Math.floor(i / numSquares));
+                piece.setAttribute('data-index', i);
                 pieces.push(piece);
             }
 
@@ -209,14 +190,13 @@
             }
 
             if (solved) {
-
+                const pieceSize = puzzle.offsetWidth / numSquares; // Assuming all pieces are square
                 for (let i = 0; i < pieces.length; i++) {
                     const piece = pieces[i];
-                    piece.style.left = Math.round(parseInt(piece.getAttribute('data-original-x'), 10) * (puzzle.offsetWidth * numSquares));
-                    piece.style.top = Math.round(parseInt(piece.getAttribute('data-original-y'), 10) * (puzzle.offsetHeight * numSquares));
+                    piece.style.left = `${piece.getAttribute('data-original-x') * pieceSize}px`;
+                    piece.style.top = `${piece.getAttribute('data-original-y') * pieceSize}px`;;
 
                 }
-                const pieceSize = puzzle.offsetWidth / numSquares;
                 const emptyPiece = document.querySelector('.empty');
                 const i = (numSquares * numSquares - 1)
                 emptyPiece.style.backgroundImage = `url('${imageUrl}')`;
