@@ -2,7 +2,7 @@
 
 namespace HiroeBirthdayGift.Controllers
 {
-    public class SlidePuzzleController : Controller
+    public class GamesController : Controller
     {
         public IActionResult Dog()
         {

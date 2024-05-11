@@ -281,8 +281,28 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\Reason.mp3",
+      "PackagePath": "staticwebassets\\music\\Reason.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\Sparkle.mp3",
+      "PackagePath": "staticwebassets\\music\\Sparkle.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\あのね.mp3",
+      "PackagePath": "staticwebassets\\music\\あのね.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\アナログライフ.mp3",
+      "PackagePath": "staticwebassets\\music\\アナログライフ.mp3"
+    },
+    {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3",
       "PackagePath": "staticwebassets\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\好きになってはいけない理由.mp3",
+      "PackagePath": "staticwebassets\\music\\好きになってはいけない理由.mp3"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.HiroeBirthdayGift.Microsoft.AspNetCore.StaticWebAssets.props",
