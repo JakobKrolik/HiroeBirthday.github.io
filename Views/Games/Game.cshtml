@@ -63,7 +63,7 @@
         </div>
     </div>
     <h3 id="congratsText" class="text-center mt-3" style="display: none;">Hehe looks like a fun game<br />We should play it more</h3>
-    <a class="btn-custom btn-lg text-center" href="@Url.Action("Pochacco", "SlidePuzzle")" role="button" style="text-decoration: none; display: none" id="nextButton">I, Hiroe Wakai, am ready for the next puzzle!!</a>
+    <a class="btn-custom btn-lg text-center" href="@Url.Action("Crossword", "Games")" role="button" style="text-decoration: none; display: none" id="nextButton">Give me something different!</a>
 
     <script>
         const imageUrl = '@ViewData["ImageUrl"]';
@@ -74,12 +74,6 @@
         window.onload = function () {
             createPuzzle();
         };
-        $(document).ready(function () {
-            $('#confirmBtn').click(function () {
-                // Perform the redirection
-                window.location.href = '@Url.Action("Game", "Puzzle")'; // Make sure this Razor syntax is executed server-side correctly
-            });
-        });
 
         function shuffle(pieces, numSquares) {
             let isSolvable = false;
