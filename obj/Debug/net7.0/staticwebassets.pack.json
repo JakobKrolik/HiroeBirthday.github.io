@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\images\\anya-forger-pointing.png"
     },
     {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\blue-water-scenery.gif",
+      "PackagePath": "staticwebassets\\images\\blue-water-scenery.gif"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\blue-water-scenery1.gif",
+      "PackagePath": "staticwebassets\\images\\blue-water-scenery1.gif"
+    },
+    {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\game.jpg",
       "PackagePath": "staticwebassets\\images\\game.jpg"
     },
@@ -31,6 +39,10 @@
     {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\happy-pochacco.gif",
       "PackagePath": "staticwebassets\\images\\happy-pochacco.gif"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\ocean.gif",
+      "PackagePath": "staticwebassets\\images\\ocean.gif"
     },
     {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\pochacco.jpg",

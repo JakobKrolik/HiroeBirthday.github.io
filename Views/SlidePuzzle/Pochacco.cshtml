@@ -162,7 +162,7 @@
                 pieces.push(piece);
             }
 
-            //shuffle(pieces); // Shuffle pieces before appending to ensure solvable configuration
+            shuffle(pieces); // Shuffle pieces before appending to ensure solvable configuration
             pieces.forEach((piece, i) => {
                 piece.style.left = `${(i % numSquares) * pieceSize}px`;
                 piece.style.top = `${Math.floor(i / numSquares) * pieceSize}px`;

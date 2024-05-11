@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ck4b6CgoKeVq1cM1bmCKFLsYTlUa/qc9u6y5l2IgIlU=",
+  "Hash": "Ny8BrCzDdkqkBr3WKSAXR4pybLeMzzm3+vt4UvSJTvg=",
   "Source": "HiroeBirthdayGift",
   "BasePath": "_content/HiroeBirthdayGift",
   "Mode": "Default",
@@ -102,6 +102,40 @@
       "OriginalItemSpec": "wwwroot\\images\\anya-forger-pointing.png"
     },
     {
+      "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\blue-water-scenery.gif",
+      "SourceId": "HiroeBirthdayGift",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\",
+      "BasePath": "_content/HiroeBirthdayGift",
+      "RelativePath": "images/blue-water-scenery.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blue-water-scenery.gif"
+    },
+    {
+      "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\blue-water-scenery1.gif",
+      "SourceId": "HiroeBirthdayGift",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\",
+      "BasePath": "_content/HiroeBirthdayGift",
+      "RelativePath": "images/blue-water-scenery1.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\blue-water-scenery1.gif"
+    },
+    {
       "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\game.jpg",
       "SourceId": "HiroeBirthdayGift",
       "SourceType": "Discovered",
@@ -151,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\happy-pochacco.gif"
+    },
+    {
+      "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\ocean.gif",
+      "SourceId": "HiroeBirthdayGift",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\",
+      "BasePath": "_content/HiroeBirthdayGift",
+      "RelativePath": "images/ocean.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ocean.gif"
     },
     {
       "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\images\\pochacco.jpg",
