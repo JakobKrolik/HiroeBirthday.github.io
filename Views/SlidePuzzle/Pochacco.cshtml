@@ -28,6 +28,7 @@
             background-size: 400px 400px; /* Match the puzzle size to ensure correct sectioning */
             border: 1px solid #fff;
             cursor: pointer;
+            transition: left 0.3s ease, top 0.3s ease; /* Animates the movement */
         }
 
         .empty {
@@ -56,15 +57,17 @@
                 </div>
                 <div class="modal-body text-center">
                     <img src="~/images/happy-pochacco.gif" alt="Congrats!" class="img-fluid">
-                    <h1 class="text-center"><strong>HIROE! that was so good!!!<br />I was testing this and it took me forever HAHAHA！<br />Perhaps you really are the best ever?!?</strong></h1>
+                    <h1 class="text-center"><strong>HIROE! you're amazing!<br />I was testing this, it took me forever HAHA！<br />Perhaps you really are the best ever?!?</strong></h1>
                 </div>
             </div>
         </div>
     </div>
     <h3 id="congratsText" class="text-center mt-3" style="display: none;">Isn't He so cute!!!<br />I love him 🥰</h3>
-    <button class="btn-custom btn-lg text-center" data-toggle="modal" data-target="#confirmationModal" style="text-decoration: none; display: none" id="nextButton">
-        This one was too easy for me, I'm ready for the hard one
-    </button>
+    <div class="d-flex justify-content-center">
+        <button class="btn-custom btn-lg" data-toggle="modal" data-target="#confirmationModal" style="text-decoration: none; display: none;" id="nextButton">
+            This one was too easy for me, I'm ready for the hard one
+        </button>
+    </div>
     <!-- Confirmation Modal -->
     <div class="modal fade text-center" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -115,21 +118,21 @@
 
         function checkSolvability(pieces, numSquares) {
             let inversions = 0;
-            const pieceArray = pieces.map((p) => {
-                const backgroundPosition = p.style.backgroundPosition.match(/-(\d+)px/);
-                return backgroundPosition ? parseInt(backgroundPosition[1]) / (400 / numSquares) : -1; // Empty piece
-            });
+            const pieceArray = pieces.map(p => parseInt(p.getAttribute('data-index'), 10));
 
             for (let i = 0; i < pieceArray.length; i++) {
+                if (pieces[i].classList.contains('empty')) continue; // Skip the empty piece in inversions count
                 for (let j = i + 1; j < pieceArray.length; j++) {
-                    if (pieceArray[i] > pieceArray[j] && pieceArray[j] !== -1) {
+                    if (pieces[j].classList.contains('empty')) continue; // Skip the empty piece in inversions count
+                    if (pieceArray[i] > pieceArray[j]) {
                         inversions++;
                     }
                 }
             }
 
-            // Calculate the row of the blank tile from the bottom
-            const blankRowFromBottom = Math.floor(pieces.findIndex(p => p.classList.contains('empty')) / numSquares);
+            // Adjust blankRowFromBottom calculation
+            const blankIndex = pieces.findIndex(p => p.classList.contains('empty'));
+            const blankRowFromBottom = numSquares - Math.floor(blankIndex / numSquares) - 1;
 
             if (numSquares % 2 !== 0) { // Odd grid
                 return inversions % 2 === 0;
@@ -159,7 +162,7 @@
                 pieces.push(piece);
             }
 
-            shuffle(pieces); // Shuffle pieces before appending to ensure solvable configuration
+            //shuffle(pieces); // Shuffle pieces before appending to ensure solvable configuration
             pieces.forEach((piece, i) => {
                 piece.style.left = `${(i % numSquares) * pieceSize}px`;
                 piece.style.top = `${Math.floor(i / numSquares) * pieceSize}px`;

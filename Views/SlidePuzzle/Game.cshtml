@@ -28,6 +28,7 @@
             background-size: 400px 400px; /* Match the puzzle size to ensure correct sectioning */
             border: 1px solid #fff;
             cursor: pointer;
+            transition: left 0.3s ease, top 0.3s ease; /* Animates the movement */
         }
 
         .empty {
@@ -159,7 +160,6 @@
         }
 
         function movePiece(index, piece, pieceSize) {
-            clicks += 1;
             const emptyPiece = document.querySelector('.empty');
             const emptyIdx = pieces.indexOf(emptyPiece);
             const x = index % numSquares;
@@ -170,6 +170,8 @@
 
             // Check if the clicked piece is adjacent to the empty space
             if ((Math.abs(ex - x) === 1 && ey === y) || (Math.abs(ey - y) === 1 && ex === x)) {
+
+                clicks += 1;
                 // Swap positions
                 [piece.style.left, emptyPiece.style.left] = [emptyPiece.style.left, piece.style.left];
                 [piece.style.top, emptyPiece.style.top] = [emptyPiece.style.top, piece.style.top];
@@ -185,7 +187,7 @@
             const pieces = document.querySelectorAll('.puzzle-piece');
             let solved = true;
 
-            if (clicks < 3) {
+            if (clicks < 10) {
                 solved = false;
             }
 
@@ -207,9 +209,11 @@
                     piece.style.border = 'none';
                     piece.style.cursor = 'default';
                 });
-                $('#winModal').modal('show');  // Use jQuery to show the Bootstrap modal
-                document.getElementById('congratsText').style.display = 'block'; // Show the hidden h3 text
-                document.getElementById('nextButton').style.display = 'block'; // Show the next button
+                setTimeout(() => {
+                    $('#winModal').modal('show');  // Use jQuery to show the Bootstrap modal
+                    document.getElementById('congratsText').style.display = 'block'; // Show the hidden h3 text
+                    document.getElementById('nextButton').style.display = 'block'; // Show the next button
+                }, 500);
 
 
             }

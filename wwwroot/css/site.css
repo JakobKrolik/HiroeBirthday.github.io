@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html {
   font-size: 14px;
 }
@@ -26,12 +28,10 @@ body {
 }
 
 body {
-    font-family: 'Comfortaa', cursive;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb, #2575fc);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background-image: url('../images/blue-water-scenery.gif'); /* Update with the correct path */
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat; /* Prevent repeating the background */
+    background-attachment: fixed; /* Keep the background fixed during scrolling */
 }
 
 .section {
@@ -45,7 +45,6 @@ body {
     margin: 30px auto;
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-family: 'Bubblegum Sans', sans-serif;
 }
 
 h1 {
@@ -89,6 +88,24 @@ a:link {
         background-color: #357ABD; /* Slightly darker shade when hovered */
         color: white; /* White text for contrast */
     }
+#volumeControl {
+    width: 100px; /* Adjust width to fit your layout */
+}
+.volume-slider {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.navbar-nav i {
+    font-size: 24px;
+    padding-top: 8px;
+}
+#muteButton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
 
 .bottom-left-img {
     position: absolute;
@@ -133,4 +150,10 @@ a:link {
         opacity: 0.9;
         box-shadow: 0 0 15px rgba(173, 216, 230, 0.7), 0 0 20px rgba(173, 216, 230, 0.7);
     }
+}
+
+body, button, input, textarea {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }

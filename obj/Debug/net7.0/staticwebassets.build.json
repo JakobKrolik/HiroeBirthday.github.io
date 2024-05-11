@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "liMnVBpp+Fo517bSknAJVkHSXJk+KVLt1vhk8Ws2vlo=",
+  "Hash": "Ck4b6CgoKeVq1cM1bmCKFLsYTlUa/qc9u6y5l2IgIlU=",
   "Source": "HiroeBirthdayGift",
   "BasePath": "_content/HiroeBirthdayGift",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3",
+      "SourceId": "HiroeBirthdayGift",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\",
+      "BasePath": "_content/HiroeBirthdayGift",
+      "RelativePath": "music/ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3"
     }
   ]
 }

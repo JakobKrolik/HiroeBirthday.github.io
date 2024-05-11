@@ -269,6 +269,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3",
+      "PackagePath": "staticwebassets\\music\\ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.HiroeBirthdayGift.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

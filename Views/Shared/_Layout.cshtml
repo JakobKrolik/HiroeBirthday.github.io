@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HiroeBirthdayGift.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,12 +26,18 @@
                         </li>
                     </ul>
                 </div>
+                <i id="volumeIcon" class="fas fa-volume-up text-white" style="padding-right: 10px;"></i>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="1" class="volume-slider">
             </div>
         </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            <audio id="backgroundMusic" loop conrols autoplay>
+                <source src="~/music/ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </main>
     </div>
 
