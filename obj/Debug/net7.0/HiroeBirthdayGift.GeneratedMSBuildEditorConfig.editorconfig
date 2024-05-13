@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\thres\OneDrive\Documents\GitHub\HiroeBirthday.github.io
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Crossword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcQ3Jvc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Dog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcRG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

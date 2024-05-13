@@ -16,5 +16,9 @@ namespace HiroeBirthdayGift.Controllers
         {
             return View();
         }
+        public IActionResult Crossword()
+        {
+            return View();
+        }
     }
 }
