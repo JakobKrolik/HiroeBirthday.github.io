@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\thres\OneDrive\Documents\GitHub\HiroeBirthday.github.io
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Crossword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcQ3Jvc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Dog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcRG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Game.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcR2FtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Games/Pochacco.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FtZXNcUG9jaGFjY28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -30,18 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/SlidePuzzle/Dog.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcRG9nLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/SlidePuzzle/Game.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcR2FtZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/SlidePuzzle/Pochacco.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xpZGVQdXp6bGVcUG9jaGFjY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/thres/OneDrive/Documents/GitHub/HiroeBirthday.github.io/Views/_ViewImports.cshtml]
