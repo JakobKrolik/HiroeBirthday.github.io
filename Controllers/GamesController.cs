@@ -20,5 +20,9 @@ namespace HiroeBirthdayGift.Controllers
         {
             return View();
         }
+        public IActionResult Final()
+        {
+            return View();
+        }
     }
 }

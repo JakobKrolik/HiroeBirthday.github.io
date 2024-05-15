@@ -68,11 +68,13 @@
     }
     // Restore music time and attempt to play
     player.currentTime = parseFloat(sessionStorage.getItem('musicTime') || 0);
+    console.log(sessionStorage.getItem('musicTime'))
     setTrack(parseInt(sessionStorage.getItem('musicTrack') || 0)); // Start with the first song
     player.play(); // Consider browser autoplay policy
 
     window.addEventListener('beforeunload', function () {
         sessionStorage.setItem('musicTime', player.currentTime);
+        console.log(player.currentTime);
         sessionStorage.setItem('musicTrack', trackIndex);
     });
 });
