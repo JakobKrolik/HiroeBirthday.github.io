@@ -281,12 +281,32 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\Bubblaine.mp3",
+      "PackagePath": "staticwebassets\\music\\Bubblaine.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\IWonder.mp3",
+      "PackagePath": "staticwebassets\\music\\IWonder.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\InochiNoNamae.mp3",
+      "PackagePath": "staticwebassets\\music\\InochiNoNamae.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\PromiseoftheWorld.mp3",
+      "PackagePath": "staticwebassets\\music\\PromiseoftheWorld.mp3"
+    },
+    {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\Reason.mp3",
       "PackagePath": "staticwebassets\\music\\Reason.mp3"
     },
     {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\Sparkle.mp3",
       "PackagePath": "staticwebassets\\music\\Sparkle.mp3"
+    },
+    {
+      "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\UmiNoMieruMachi.mp3",
+      "PackagePath": "staticwebassets\\music\\UmiNoMieruMachi.mp3"
     },
     {
       "Id": "C:\\Users\\thres\\OneDrive\\Documents\\GitHub\\HiroeBirthday.github.io\\wwwroot\\music\\あのね.mp3",

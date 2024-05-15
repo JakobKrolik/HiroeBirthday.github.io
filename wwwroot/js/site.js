@@ -1,4 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+    doMusic();
+});
+function doMusic() {
     const player = document.getElementById('backgroundMusic');
     const volumeIcon = document.getElementById('volumeIcon');
     const volumeSlider = document.getElementById('volumeControl');
@@ -6,11 +9,16 @@
     const trackTitle = document.getElementById('trackTitle');
     const playlist = [
         { url: '../music/ベイビー・アイラブユー-TEE【vocal off】arranged by Ask-Water.mp3', title: 'ベイビー・アイラブユ' },
-        { url: '../music/Reason.mp3', title: 'Reason' },
+        { url: '../music/PromiseoftheWorld.mp3', title: 'Promise of the World' },
+        { url: '../music/IWonder.mp3', title: 'I Wonder' },
         { url: '../music/あのね.mp3', title: 'あのね' },
+        { url: '../music/UmiNoMieruMachi.mp3', title: 'Umi No Mieru Machi' },
+        { url: '../music/Reason.mp3', title: 'Reason' },
+        { url: '../music/InochiNoNamae.mp3', title: 'Inochi No Namae' },
         { url: '../music/Sparkle.mp3', title: 'Sparkle' },
         { url: '../music/好きになってはいけない理由.mp3', title: '好きになってはいけない理由' },
         { url: '../music/アナログライフ.mp3', title: 'アナログライフ' },
+        { url: '../music/Bubblaine.mp3', title: 'Bubblaine' },
     ];
     let trackIndex = 0;
 
@@ -77,4 +85,4 @@
         console.log(player.currentTime);
         sessionStorage.setItem('musicTrack', trackIndex);
     });
-});
+}

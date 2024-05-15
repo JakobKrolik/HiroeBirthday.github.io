@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultra Special Birthday Puzzler Mania</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js"></script> <!-- Include your site.js file here -->
+
 </head>
 <body>
     <div class="section main-section">
@@ -18,5 +25,27 @@
     <div class="d-flex justify-content-center align-items-center" style="height: 5vh;">
         <a class="btn-custom btn-lg" href="@Url.Action("Dog", "Games")" role="button" style="text-decoration: none;">Start the Puzzle!</a>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="birthdayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Happy Birthday</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Show the modal on page load
+            $('#birthdayModal').modal('show');
+
+            // When the modal is hidden, run player.play()
+            $('#birthdayModal').on('hidden.bs.modal', function () {
+                doMusic();
+            });
+        });
+    </script>
 </body>
 </html>
